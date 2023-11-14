@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProductData>
+@{
+  ViewData["Title"] = "Home Page";
+}
+
+Product Listing :
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Product Availability</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var productData in Model)
+    {
+      <tr>
+        <td>@productData.ProductName</td>
+        <td>@(productData.ProductAvailability == true ? "Yes" : "No")</td>
+        <td>@productData.Price</td>
+      </tr>
+    }
+  </tbody>
+
+</table>
